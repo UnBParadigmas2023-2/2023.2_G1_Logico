@@ -19,26 +19,41 @@
 
 
 ## Sobre 
-adicionar descrição
+Este projeto consiste na criação de um sistema de recomendação que proporciona ao estudante do curso de Engenharia de Software uma proposta de uma grade horária mais adequada para os seus estudos, considerando fatores externos como atividades extra-curriculares, estágios e/ou trabalho, de modo a evitar reprovações ou trancamentos por não conseguir atingir aos objetivos acadêmicos causados por emoções negativas como por exemplo frustração, e de modo a melhorar consequentemente a saúde mental ao estudante.
 
 ## Screenshots
 adicionar descrição
 
 ## Instalação 
-**Linguagens**: Prolog<br>
-**Tecnologias**: adicionar descrição<br>
+**Linguagens**: Prolog, Python e Java<br>
 
-## Uso 
-adicionar descrição
-### Comandos para distros baseados em Ubuntu
+### Prolog
+Windows: Fazer download [aqui](https://www.swi-prolog.org/download/stable)
 
+Ubuntu:
 ```bash
-    sudo apt install dependency -y
+    $ sudo apt install swi-prolog
+```
+## Uso 
+**É necessário ter o JAVA instalado para utilziar a dependencia tabula_py do python**
+
+### Como Executar
+```bash
+    $ pip install -r requirements.tx
+```
+```bash
+    $ python main.py caminho/para/seu_historico_do_sigaa.pdf 
+```
+```bash
+    $ menu.
+```
+O programa vai imprimir o número de materias cursadas e solicitar o número de matérias que dejesa cursar, assim, caso seja 5, siga esse exemplo:
+```bash
+    $ 5.
 ```
 
 ## Vídeo de apresentação
 adicionar descrição
-
 
 ## Participações
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
