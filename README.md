@@ -28,15 +28,36 @@ adicionar descrição
 
 ## Instalação 
 
-Tendo em conta a diversidade de sistemas operacionais e interpretadores existentes, o nosso grupo decidiu utilizar o SWI Prolog. [Clique aqui](https://www.swi-prolog.org/download/stable) e siga as instruções de download e instalação.
+**Linguagens**: Prolog, Python e Java<br>
 
+### Prolog
+Windows: Fazer download [aqui](https://www.swi-prolog.org/download/stable)
+
+Ubuntu:
+```bash
+    $ sudo apt install swi-prolog
+```
 ## Uso 
-Abra o terminal e digite ```swi-prolog.swipl [main.pl]``` para executar o script.
 
+**É necessário ter o JAVA instalado para utilziar a dependencia tabula_py do python**
+
+### Como Executar
+```bash
+    $ pip install -r requirements.tx
+```
+```bash
+    $ python main.py caminho/para/seu_historico_do_sigaa.pdf 
+```
+```bash
+    $ menu.
+```
+O programa vai imprimir o número de materias cursadas e solicitar o número de matérias que dejesa cursar, assim, caso seja 5, siga esse exemplo:
+```bash
+    $ 5.
+```
 
 ## Vídeo de apresentação
 adicionar descrição
-
 
 ## Participações
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.

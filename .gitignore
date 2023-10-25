@@ -1,0 +1,5 @@
+venv
+env
+historico*
+src/database/disciplinas_cursadas.pl
+__pycache__
