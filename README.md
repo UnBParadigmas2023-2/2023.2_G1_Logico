@@ -19,7 +19,9 @@
 
 
 ## Sobre 
-adicionar descrição
+
+Este projeto consiste na criação de um sistema de recomendação que proporciona ao estudante do curso de Engenharia de Software uma proposta de uma grade horária mais adequada para os seus estudos, considerando fatores externos como atividades extra-curriculares, estágios e/ou trabalho, de modo a evitar reprovações ou trancamentos por não conseguir atingir aos objetivos acadêmicos causados por emoções negativas como  por exemplo frustração, e de modo a melhorar consequentemente a saúde mental ao estudante. 
+
 
 ## Screenshots
 adicionar descrição
@@ -50,7 +52,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Laura Pinos de Oliveira           |  | Regular |
 | Lucas Gomes Caldas                 |  | Boa |
 | Pedro Vitor Augusto de Jesus      || Boa |
-| Rodolfo Cabral Neves              |  | Regular |
+| Rodolfo Cabral Neves              | Adicionar a base de dados de atividades complementares e de disciplinas optativas do curso de Engenharia de Software, documentação do projeto.  | Regular |
 | Rodrigo Carvalho dos Santos       | | Boa |
 | Sidney Fernando Ferreira Lemes    |  | Regular |
 
