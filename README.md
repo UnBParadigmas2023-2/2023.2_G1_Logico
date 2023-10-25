@@ -48,9 +48,12 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Laura Pinos de Oliveira           |  | Regular |
 | Lucas Gomes Caldas                 |  | Boa |
 | Pedro Vitor Augusto de Jesus      || Boa |
-| Rodolfo Cabral Neves              | Adicionar a base de dados de atividades complementares e de disciplinas optativas do curso de Engenharia de Software, documentação do projeto.  | Regular |
+| Rodolfo Cabral Neves              | <p align='justify'>Adicionar a base de dados de atividades complementares e de disciplinas optativas do curso de Engenharia de Software, documentação do projeto</p>.  | Regular |
 | Rodrigo Carvalho dos Santos       | | Boa |
 | Sidney Fernando Ferreira Lemes    |  | Regular |
 
 ## Fontes
-[Adicionar alguma fonte seguindo o padrão ABNT (https://duckduckgo.com/)
+
+SWI-Prolog downloads. Disponível em: <https://www.swi-prolog.org/download/stable>.
+
+‌
