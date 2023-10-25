@@ -19,8 +19,9 @@
 
 
 ## Sobre 
+<p align='justify'>
 
-Este projeto consiste na criação de um sistema de recomendação que proporciona ao estudante do curso de Engenharia de Software uma proposta de uma grade horária mais adequada para os seus estudos, considerando fatores externos como atividades extra-curriculares, estágios e/ou trabalho, de modo a evitar reprovações ou trancamentos por não conseguir atingir aos objetivos acadêmicos causados por emoções negativas como  por exemplo frustração, e de modo a melhorar consequentemente a saúde mental ao estudante. 
+Este projeto consiste na criação de um sistema de recomendação que proporciona ao estudante do curso de Engenharia de Software uma proposta de uma grade horária mais adequada para os seus estudos, considerando fatores externos como atividades extra-curriculares, estágios e/ou trabalho, de modo a evitar reprovações ou trancamentos por não conseguir atingir aos objetivos acadêmicos causados por emoções negativas como  por exemplo frustração, e de modo a melhorar consequentemente a saúde mental ao estudante.</p> 
 
 
 ## Screenshots
