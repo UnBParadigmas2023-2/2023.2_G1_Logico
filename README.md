@@ -20,7 +20,6 @@
 
 ## Sobre 
 <p align='justify'>
-
 Este projeto consiste na criação de um sistema de recomendação que proporciona ao estudante do curso de Engenharia de Software uma proposta de uma grade horária mais adequada para os seus estudos, considerando fatores externos como atividades extra-curriculares, estágios e/ou trabalho, de modo a evitar reprovações ou trancamentos por não conseguir atingir aos objetivos acadêmicos causados por emoções negativas como  por exemplo frustração, e de modo a melhorar consequentemente a saúde mental ao estudante.</p> 
 
 
@@ -28,16 +27,12 @@ Este projeto consiste na criação de um sistema de recomendação que proporcio
 adicionar descrição
 
 ## Instalação 
-**Linguagens**: Prolog<br>
-**Tecnologias**: adicionar descrição<br>
+
+Tendo em conta a diversidade de sistemas operacionais e interpretadores existentes, o nosso grupo decidiu utilizar o SWI Prolog. [Clique aqui](https://www.swi-prolog.org/download/stable) e siga as instruções de download e instalação.
 
 ## Uso 
-adicionar descrição
-### Comandos para distros baseados em Ubuntu
+Abra o terminal e digite ```swi-prolog.swipl [main.pl]``` para executar o script.
 
-```bash
-    sudo apt install dependency -y
-```
 
 ## Vídeo de apresentação
 adicionar descrição
