@@ -58,12 +58,12 @@ def dataframe_to_prolog(df, database_name):
         prolog_db.append(fato)
 
     # arquivo do banco de dados Prolog
-    with open(f'{database_name}.pl', 'w') as file:
+    with open(f'src/database/{database_name}.pl', 'w') as file:
         for linha in prolog_db:
             file.write(linha + '\n')
             
-def main():
-    df_final = read_pdf('historico_joao.pdf')
+def gera_database(path):
+    df_final = read_pdf(path)
     
     #retira caracteres especiais
     #df_final['Nome'].apply(unidecode)
@@ -71,6 +71,6 @@ def main():
     dataframe_to_prolog(df_final, 'disciplinas_cursadas')
     
 if __name__ == '__main__':
-    main()
+    gera_database()
     
     
