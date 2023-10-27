@@ -53,7 +53,7 @@ def dataframe_to_prolog(df, database_name):
         nome = row['Nome']
 
         # fatos Prolog formatado
-        fato = f'disciplina_cursada("{codigo}", "{nome}").'
+        fato = f'disciplina_cursada(\'{codigo}\', \'{nome}\').'
 
         prolog_db.append(fato)
 

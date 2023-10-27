@@ -9,14 +9,17 @@ menu :-
     writeln(Total),
     writeln("Quantas disciplinas voce deseja cursar no proximo semestre?"),
     read(QuantidadeDesejada),
+    filtrar_disciplinas_nao_cursadas(DisciplinasNaoCursadas),
     writeln("Deseja criar o arquivo 'disciplinas_nao_cursadas.pl'? (s/n)"),
     read(Resposta),
     (Resposta = 's' -> 
-        filtrar_disciplinas_nao_cursadas(DisciplinasNaoCursadas),
         criar_arquivo_disciplinas_nao_cursadas(DisciplinasNaoCursadas);
         true
-    ).
-    % recomenda_grade_horaria(QuantidadeDesejada).
+    ),
+    recomenda_grade_horaria(DisciplinasNaoCursadas).
+
+recomenda_grade_horaria(DisciplinasNaoCursadas):-
+    write(DisciplinasNaoCursadas).
 
 total_disciplinas_cursadas(Total) :-
     findall(_, disciplina_cursada(_, _), Disciplinas),
@@ -26,7 +29,7 @@ disciplina_cursada(Codigo) :-
     disciplina_cursada(Codigo, _).
 
 filtrar_disciplinas_nao_cursadas(DisciplinasNaoCursadas) :-
-    findall((Codigo, QtdCredito, Obrigatorio, Nome, PreRequisito),
+    findall((Codigo, Nome),
         (disciplina_obrigatoria(Codigo, QtdCredito, Obrigatorio, Nome, PreRequisito),
          \+ disciplina_cursada(Codigo)),
         DisciplinasNaoCursadas).
