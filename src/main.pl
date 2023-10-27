@@ -32,7 +32,7 @@ filtrar_disciplinas_nao_cursadas(DisciplinasNaoCursadas) :-
         DisciplinasNaoCursadas).
 
 criar_arquivo_disciplinas_nao_cursadas(DisciplinasNaoCursadas) :-
-    tell('database/disciplinas_nao_cursadas.pl'),
+    tell('src/database/disciplinas_nao_cursadas.pl'),
     format('% Arquivo gerado automaticamente com disciplinas não cursadas\n\n', []),
     format('% Disciplinas não cursadas:\n', []),
     salvar_disciplinas(DisciplinasNaoCursadas),
