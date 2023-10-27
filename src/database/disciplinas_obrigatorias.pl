@@ -1,4 +1,4 @@
-% disciplina(Codigo, QtdCredito, Obrigatorio, Nome, PreRequisito).
+% disciplina_obrigatoria(Codigo, QtdCredito, Obrigatorio, Nome).
 % 1º Semestre
 disciplina("MAT0025", 6, true, "CALCULO 1").
 disciplina("CIC0004", 6, true, "ALGORITMOS E PROGRAMACAO DE COMPUTADORES").

@@ -19,26 +19,45 @@
 
 
 ## Sobre 
-adicionar descrição
+<p align='justify'>
+Este projeto consiste na criação de um sistema de recomendação que proporciona ao estudante do curso de Engenharia de Software uma proposta de uma grade horária mais adequada para os seus estudos, considerando fatores externos como atividades extra-curriculares, estágios e/ou trabalho, de modo a evitar reprovações ou trancamentos por não conseguir atingir aos objetivos acadêmicos causados por emoções negativas como  por exemplo frustração, e de modo a melhorar consequentemente a saúde mental ao estudante.</p> 
+
 
 ## Screenshots
 adicionar descrição
 
 ## Instalação 
-**Linguagens**: Prolog<br>
-**Tecnologias**: adicionar descrição<br>
 
-## Uso 
-adicionar descrição
-### Comandos para distros baseados em Ubuntu
+**Linguagens**: Prolog, Python e Java<br>
 
+### Prolog
+Windows: Fazer download [aqui](https://www.swi-prolog.org/download/stable)
+
+Ubuntu:
 ```bash
-    sudo apt install dependency -y
+    $ sudo apt install swi-prolog
+```
+## Uso 
+
+**É necessário ter o JAVA instalado para utilziar a dependencia tabula_py do python**
+
+### Como Executar
+```bash
+    $ pip install -r requirements.tx
+```
+```bash
+    $ python main.py caminho/para/seu_historico_do_sigaa.pdf 
+```
+```bash
+    $ menu.
+```
+O programa vai imprimir o número de materias cursadas e solicitar o número de matérias que dejesa cursar, assim, caso seja 5, siga esse exemplo:
+```bash
+    $ 5.
 ```
 
 ## Vídeo de apresentação
 adicionar descrição
-
 
 ## Participações
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
@@ -50,9 +69,12 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Laura Pinos de Oliveira           |  | Regular |
 | Lucas Gomes Caldas                 |  | Boa |
 | Pedro Vitor Augusto de Jesus      || Boa |
-| Rodolfo Cabral Neves              |  | Regular |
+| Rodolfo Cabral Neves              | <p align='justify'>Adicionar a base de dados de atividades complementares e de disciplinas optativas do curso de Engenharia de Software, documentação do projeto</p>.  | Regular |
 | Rodrigo Carvalho dos Santos       | | Boa |
 | Sidney Fernando Ferreira Lemes    |  | Regular |
 
 ## Fontes
-[Adicionar alguma fonte seguindo o padrão ABNT (https://duckduckgo.com/)
+
+SWI-Prolog downloads. Disponível em: <https://www.swi-prolog.org/download/stable>.
+
+‌
