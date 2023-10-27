@@ -18,8 +18,34 @@ menu :-
     ),
     recomenda_grade_horaria(DisciplinasNaoCursadas).
 
-recomenda_grade_horaria(DisciplinasNaoCursadas):-
-    write(DisciplinasNaoCursadas).
+recomenda_grade_horaria(DisciplinasNaoCursadas) :-
+    maior_cadeia_de_pre_requisitos(MaiorCadeia),
+    printa_grade(MaiorCadeia).
+
+maior_cadeia_de_pre_requisitos(Cadeia) :-
+    findall([Disciplina, CadeiaDisciplina, Nome], (
+        disciplina_obrigatoria(Disciplina, _, _, Nome),
+        \+ disciplina_cursada(Disciplina),
+        find_cadeia_de_pre_requisitos(Disciplina, CadeiaDisciplina, 0)
+    ), Cadeias),
+    sort(2, @>=, Cadeias, SortedCadeias),
+    SortedCadeias = Cadeia.
+
+find_cadeia_de_pre_requisitos(_, Cadeia,_).
+find_cadeia_de_pre_requisitos(Disciplina, Cadeia, TamanhoCadeia) :-
+    Cadeia is TamanhoCadeia+1,
+    prerequisito(Disciplina, PreRequisito),
+    find_cadeia_de_pre_requisitos(PreRequisito, Cadeia, TamanhoCadeia).
+
+find_cadeia_de_pre_requisitos([Disciplina|Resto], Cadeia, TamanhoCadeia) :-
+    find_cadeia_de_pre_requisitos(Resto, Cadeia),
+    find_cadeia_de_pre_requisitos(Disciplina, Cadeia).
+
+printa_grade([Disciplina|Resto]):-
+    writeln([Disciplina]),
+    printa_grade(Resto).
+printa_grade([Disciplina]):-
+    writeln(Disciplina).
 
 total_disciplinas_cursadas(Total) :-
     findall(_, disciplina_cursada(_, _), Disciplinas),
@@ -29,10 +55,11 @@ disciplina_cursada(Codigo) :-
     disciplina_cursada(Codigo, _).
 
 filtrar_disciplinas_nao_cursadas(DisciplinasNaoCursadas) :-
-    findall((Codigo, Nome),
-        (disciplina_obrigatoria(Codigo, QtdCredito, Obrigatorio, Nome, PreRequisito),
-         \+ disciplina_cursada(Codigo)),
-        DisciplinasNaoCursadas).
+    findall(
+        (Codigo, Nome, QtdCredito), (
+            disciplina_obrigatoria(Codigo, QtdCredito, true, Nome),
+            \+ disciplina_cursada(Codigo)
+        ), DisciplinasNaoCursadas).
 
 criar_arquivo_disciplinas_nao_cursadas(DisciplinasNaoCursadas) :-
     tell('src/database/disciplinas_nao_cursadas.pl'),
@@ -43,5 +70,5 @@ criar_arquivo_disciplinas_nao_cursadas(DisciplinasNaoCursadas) :-
 
 salvar_disciplinas([]).
 salvar_disciplinas([(Codigo, QtdCredito, Obrigatorio, Nome, PreRequisito)|Resto]) :-
-    format("disciplina_obrigatoria('~w', ~w, ~w, '~w', ~w).\n", [Codigo, QtdCredito, Obrigatorio, Nome, PreRequisito]),
+    format("disciplina_pendente('~w', ~w, ~w, '~w').\n", [Codigo, QtdCredito, Obrigatorio, Nome, PreRequisito]),
     salvar_disciplinas(Resto).
