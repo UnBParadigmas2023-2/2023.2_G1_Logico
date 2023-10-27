@@ -3,3 +3,4 @@ env
 historico*
 src/database/disciplinas_cursadas.pl
 __pycache__
+src/database/disciplinas_nao_cursadas.pl
