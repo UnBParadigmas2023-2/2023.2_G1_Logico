@@ -63,10 +63,10 @@ adicionar descrição
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -- | -- | -- |
-| Debora Caires de Souza Moreira    |  | Regular |
+| Debora Caires de Souza Moreira    |Implementei o predicado que filtra as disciplinas não cursadas, tentei iniciar um back-end e um front mas que não tive sucesso porque dependia do restante do projeto finalizado para saber o que tinha implementado. Também ajudei a popular o banco  | Boa |
 | Erick Levy Barbosa dos Santos     | | Boa |
 | Hellen Fernanda Mendonça de Faria |  | Regular |
-| Laura Pinos de Oliveira           |  | Regular |
+| Laura Pinos de Oliveira           | Ajudei na construção do banco adicionando turmas, horários e professores, ajudei no predicado de disciplinas | Excelente|
 | Lucas Gomes Caldas                 |  | Boa |
 | Pedro Vitor Augusto de Jesus      || Boa |
 | Rodolfo Cabral Neves              | <p align='justify'>Adicionar a base de dados de atividades complementares e de disciplinas optativas do curso de Engenharia de Software, documentação do projeto</p>.  | Regular |
