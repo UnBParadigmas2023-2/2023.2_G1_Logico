@@ -24,32 +24,39 @@ recomenda_grade_horaria(DisciplinasNaoCursadas, QuantidadeDesejada) :-
     printa_grade(MaiorCadeia, QuantidadeDesejada).
 
 maior_cadeia_de_pre_requisitos(Cadeia) :-
-    findall([Disciplina, Credito, Obrigatorio, Nome, CadeiaDisciplina], (
+    findall([Disciplina, CadeiaDisciplina, Credito, Nome], (
         disciplina_obrigatoria(Disciplina, Credito, Obrigatorio, Nome),
         \+ disciplina_cursada(Disciplina),
-        cadeia_de_pre_requisitos(Disciplina, CadeiaDisciplina, 0)
+        cadeia_de_pre_requisitos(Disciplina, [Disciplina], CadeiaDisciplina)
     ), Cadeias),
     sort(2, @>=, Cadeias, SortedCadeias),
     SortedCadeias = Cadeia.
 
-cadeia_de_pre_requisitos(_,Cadeia,_).
-cadeia_de_pre_requisitos(Disciplina, Cadeia, TamanhoCadeia) :-
-    NovoTamanho is TamanhoCadeia+1,
-    prerequisito(Disciplina, PreRequisito),
-    cadeia_de_pre_requisitos(PreRequisito, Cadeia, NovoTamanho),
-    Cadeia is NovoTamanho.
+cadeia_de_pre_requisitos(_,Cadeia,Cadeia).
 
-cadeia_de_pre_requisitos([Disciplina|Resto], Cadeia, TamanhoCadeia) :-
-    cadeia_de_pre_requisitos(Resto, Cadeia, TamanhoCadeia),
-    cadeia_de_pre_requisitos(Disciplina, Cadeia, TamanhoCadeia).
+cadeia_de_pre_requisitos([Disciplina|Resto], Cadeia, CadeiaDisciplina) :-
+    cadeia_de_pre_requisitos(Resto, Cadeia, CadeiaDisciplina),
+    cadeia_de_pre_requisitos(Disciplina, Cadeia, CadeiaDisciplina).
+
+cadeia_de_pre_requisitos(Disciplina, CadeiaAtual, CadeiaDisciplina) :-
+    prerequisito(Disciplina, PreRequisito),
+    cadeia_de_pre_requisitos(PreRequisito, [PreRequisito|CadeiaAtual], CadeiaDisciplina).
 
 printa_grade([], _).
 printa_grade(_,0).
 printa_grade([Disciplina|Resto], QuantidadeDesejada):-
     NovaQuantidade is QuantidadeDesejada-1,
-    write("Disciplina:"),
-    writeln(Disciplina),
+    printa_disciplina(Disciplina),
     printa_grade(Resto, NovaQuantidade).
+
+printa_disciplina([Codigo, CadeiaDisciplina, Credito, Nome]):-
+    length(CadeiaDisciplina, TamanhoCadeia),
+    write("Disciplina: "),
+    write(Nome),
+    write("\n\tTamanho da Cadeia: "),
+    write(TamanhoCadeia),
+    write("\n\tCadeia de Disciplina"),
+    writeln(CadeiaDisciplina).
 
 total_disciplinas_cursadas(Total) :-
     findall(_, disciplina_cursada(_, _), Disciplinas),
