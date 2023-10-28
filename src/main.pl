@@ -16,36 +16,40 @@ menu :-
         criar_arquivo_disciplinas_nao_cursadas(DisciplinasNaoCursadas);
         true
     ),
-    recomenda_grade_horaria(DisciplinasNaoCursadas).
+    recomenda_grade_horaria(DisciplinasNaoCursadas, QuantidadeDesejada).
 
-recomenda_grade_horaria(DisciplinasNaoCursadas) :-
+recomenda_grade_horaria(DisciplinasNaoCursadas, QuantidadeDesejada) :-
+    writeln("Recomenda grade"),
     maior_cadeia_de_pre_requisitos(MaiorCadeia),
-    printa_grade(MaiorCadeia).
+    printa_grade(MaiorCadeia, QuantidadeDesejada).
 
 maior_cadeia_de_pre_requisitos(Cadeia) :-
-    findall([Disciplina, CadeiaDisciplina, Nome], (
-        disciplina_obrigatoria(Disciplina, _, _, Nome),
+    findall([Disciplina, Credito, Obrigatorio, Nome, CadeiaDisciplina], (
+        disciplina_obrigatoria(Disciplina, Credito, Obrigatorio, Nome),
         \+ disciplina_cursada(Disciplina),
-        find_cadeia_de_pre_requisitos(Disciplina, CadeiaDisciplina, 0)
+        cadeia_de_pre_requisitos(Disciplina, CadeiaDisciplina, 0)
     ), Cadeias),
     sort(2, @>=, Cadeias, SortedCadeias),
     SortedCadeias = Cadeia.
 
-find_cadeia_de_pre_requisitos(_, Cadeia,_).
-find_cadeia_de_pre_requisitos(Disciplina, Cadeia, TamanhoCadeia) :-
-    Cadeia is TamanhoCadeia+1,
+cadeia_de_pre_requisitos(_,Cadeia,_).
+cadeia_de_pre_requisitos(Disciplina, Cadeia, TamanhoCadeia) :-
+    NovoTamanho is TamanhoCadeia+1,
     prerequisito(Disciplina, PreRequisito),
-    find_cadeia_de_pre_requisitos(PreRequisito, Cadeia, TamanhoCadeia).
+    cadeia_de_pre_requisitos(PreRequisito, Cadeia, NovoTamanho),
+    Cadeia is NovoTamanho.
 
-find_cadeia_de_pre_requisitos([Disciplina|Resto], Cadeia, TamanhoCadeia) :-
-    find_cadeia_de_pre_requisitos(Resto, Cadeia),
-    find_cadeia_de_pre_requisitos(Disciplina, Cadeia).
+cadeia_de_pre_requisitos([Disciplina|Resto], Cadeia, TamanhoCadeia) :-
+    cadeia_de_pre_requisitos(Resto, Cadeia, TamanhoCadeia),
+    cadeia_de_pre_requisitos(Disciplina, Cadeia, TamanhoCadeia).
 
-printa_grade([Disciplina|Resto]):-
-    writeln([Disciplina]),
-    printa_grade(Resto).
-printa_grade([Disciplina]):-
-    writeln(Disciplina).
+printa_grade([], _).
+printa_grade(_,0).
+printa_grade([Disciplina|Resto], QuantidadeDesejada):-
+    NovaQuantidade is QuantidadeDesejada-1,
+    write("Disciplina:"),
+    writeln(Disciplina),
+    printa_grade(Resto, NovaQuantidade).
 
 total_disciplinas_cursadas(Total) :-
     findall(_, disciplina_cursada(_, _), Disciplinas),
