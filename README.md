@@ -70,6 +70,11 @@ O programa vai imprimir o número de materias cursadas e solicitar o número de 
 ```bash
     $ 5.
 ```
+E após isso ele irá perguntar se você deseja salvar um arquivo que armazena a base de fatos de disciplinas não cursadas, caso deseseje digite:
+```
+    $ s.
+```
+Caso contrário digite qualquer outra coisa finalizando com o caractere de ponto.
 
 ## Vídeo de apresentação
 adicionar descrição
