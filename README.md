@@ -71,7 +71,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Pedro Vitor Augusto de Jesus      || Boa |
 | Rodolfo Cabral Neves              | <p align='justify'>Adicionar a base de dados de atividades complementares e de disciplinas optativas do curso de Engenharia de Software, documentação do projeto</p>.  | Regular |
 | Rodrigo Carvalho dos Santos       | | Boa |
-| Sidney Fernando Ferreira Lemes    |  | Regular |
+| Sidney Fernando Ferreira Lemes    | Eu ajudei na criação de um script para ler o histórico do aluno e montar a base de dados prolog das disciplinas cursadas, além de receber a entrada do usuário em relação à quantidade de matérias que deseja cursar.| Boa |
 
 ## Fontes
 
