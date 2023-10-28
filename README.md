@@ -65,10 +65,10 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | -- | -- | -- |
 | Debora Caires de Souza Moreira    |Implementei o predicado que filtra as disciplinas não cursadas, tentei iniciar um back-end e um front mas que não tive sucesso porque dependia do restante do projeto finalizado para saber o que tinha implementado. Também ajudei a popular o banco  | Boa |
 | Erick Levy Barbosa dos Santos     | | Boa |
-| Hellen Fernanda Mendonça de Faria |  | Regular |
+| Hellen Fernanda Mendonça de Faria | Participei das reuniões da equipe, juntamente na escolha do projeto. Fiquei responsável por criar a base de dados junto com a Laura e fizemos isso de forma eficaz e limpa. | Regular |
 | Laura Pinos de Oliveira           | Ajudei na construção do banco adicionando turmas, horários e professores, ajudei no predicado de disciplinas | Excelente|
-| Lucas Gomes Caldas                 |  | Boa |
-| Pedro Vitor Augusto de Jesus      || Boa |
+| Lucas Gomes Caldas                 | Participei na integração do Python com o Prolog, em que consiste em criar iniciar o os scripts em Python para converter o histórico do aluno em base de dados Prolog e iniciar a main do Prolog em um processo a parte. Além disso, criei o menu principal e função para contar quantas matérias o aluno já fez. | Boa |
+| Pedro Vitor Augusto de Jesus      | Concentrei a maior parte dos meus esforços na atividade de verificação de conflitos entre as disciplinas, participei ativamente na definição do escopo do projeto e também contribuí para a integração entre as diferentes funções. | Boa |
 | Rodolfo Cabral Neves              | <p align='justify'>Adicionar a base de dados de atividades complementares e de disciplinas optativas do curso de Engenharia de Software, documentação do projeto</p>.  | Regular |
 | Rodrigo Carvalho dos Santos       | | Boa |
 | Sidney Fernando Ferreira Lemes    | Eu ajudei na criação de um script para ler o histórico do aluno e montar a base de dados prolog das disciplinas cursadas, além de receber a entrada do usuário em relação à quantidade de matérias que deseja cursar.| Boa |
