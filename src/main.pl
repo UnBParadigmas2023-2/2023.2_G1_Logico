@@ -7,8 +7,6 @@ menu :-
     writeln("Total de disciplinas cursadas:"),
     total_disciplinas_cursadas(Total),
     writeln(Total),
-    writeln("Quantas disciplinas voce deseja cursar no proximo semestre?"),
-    read(QuantidadeDesejada),
     filtrar_disciplinas_nao_cursadas(DisciplinasNaoCursadas),
     writeln("Deseja criar o arquivo 'disciplinas_nao_cursadas.pl'? (s/n)"),
     read(Resposta),
@@ -16,6 +14,8 @@ menu :-
         criar_arquivo_disciplinas_nao_cursadas(DisciplinasNaoCursadas);
         true
     ),
+    writeln("Quantas disciplinas voce deseja cursar no proximo semestre?"),
+    read(QuantidadeDesejada),
     recomenda_grade_horaria(DisciplinasNaoCursadas, QuantidadeDesejada).
 
 recomenda_grade_horaria(DisciplinasNaoCursadas, QuantidadeDesejada) :-
@@ -67,12 +67,13 @@ disciplina_cursada(Codigo) :-
 
 filtrar_disciplinas_nao_cursadas(DisciplinasNaoCursadas) :-
     findall(
-        (Codigo, Nome, QtdCredito), (
+        (Codigo, QtdCredito, true, Nome), (
             disciplina_obrigatoria(Codigo, QtdCredito, true, Nome),
             \+ disciplina_cursada(Codigo)
         ), DisciplinasNaoCursadas).
 
 criar_arquivo_disciplinas_nao_cursadas(DisciplinasNaoCursadas) :-
+    writeln('criou arquivo'),
     tell('src/database/disciplinas_nao_cursadas.pl'),
     format('% Arquivo gerado automaticamente com disciplinas não cursadas\n\n', []),
     format('% Disciplinas não cursadas:\n', []),
@@ -80,6 +81,6 @@ criar_arquivo_disciplinas_nao_cursadas(DisciplinasNaoCursadas) :-
     told.
 
 salvar_disciplinas([]).
-salvar_disciplinas([(Codigo, QtdCredito, Obrigatorio, Nome, PreRequisito)|Resto]) :-
-    format("disciplina_pendente('~w', ~w, ~w, '~w').\n", [Codigo, QtdCredito, Obrigatorio, Nome, PreRequisito]),
+salvar_disciplinas([(Codigo, QtdCredito, Obrigatorio, Nome)|Resto]) :-
+    format("disciplina_pendente('~w', ~w, ~w, '~w').\n", [Codigo, QtdCredito, Obrigatorio, Nome]),
     salvar_disciplinas(Resto).
