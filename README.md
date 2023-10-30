@@ -77,7 +77,7 @@ E após isso ele irá perguntar se você deseja salvar um arquivo que armazena a
 Caso contrário digite qualquer outra coisa finalizando com o caractere de ponto.
 
 ## Vídeo de apresentação
-adicionar descrição
+https://www.youtube.com/watch?v=5x4WsTnK2Ao
 
 ## Participações
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
